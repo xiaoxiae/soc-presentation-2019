@@ -3,6 +3,9 @@
           numbering = fraction,
           sectionpage = none]{metropolis}
 
+% add fade transition
+\addtobeamertemplate{background canvas}{\transfade[duration=1]}{}
+
 % change \today formatting to d. m. yyyy
 \usepackage[dmyyyy]{datetime}
 \renewcommand{\dateseparator}{. }
