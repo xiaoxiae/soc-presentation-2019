@@ -18,6 +18,89 @@
 \usepackage[dmyyyy]{datetime}
 \renewcommand{\dateseparator}{. }
 
+
+% GRAPHICS %
+%-========-%
+\usepackage{graphicx}     % graphics package
+\graphicspath{ {./images/} } % path to images
+
+\usepackage{float} % floats in correct position (the [H] option)
+
+\usepackage{subcaption} % for subfigures
+
+\setlength{\fboxsep}{0pt}    % image border separation
+\setlength{\fboxrule}{0.5pt} % image border thickness
+
+
+% GRAPHS, CHARTS %
+%-==============-%
+\usepackage{pgf-pie} % pie charts
+
+% change pie chart number separator from dot to comma
+\usepackage{siunitx}
+\sisetup{
+  output-decimal-marker={,},
+  group-separator={\,},
+}
+\def\ScanPercentage#1\afternumber{\SI{#1}{\percent}}
+
+\usepackage{pgfplots} % bar charts
+
+
+% CAPTIONS %
+%-========-%
+\usepackage[font=footnotesize,       % 10pt captions
+            justification=centering, % center the captions
+            figurename=Obr.,         % picture captions are "Obr."
+            tablename=Tab.]{caption} % table captions are "Tab."
+
+
+% TABLES          %
+% requires: float %
+%-===============-%
+\usepackage{booktabs} % table formatting
+\usepackage{multirow} % for creating multirow tables
+
+
+% MATH %
+%-====-%
+\usepackage{amsmath, amstext} % for typesetting math
+\DeclareMathSymbol{.}{\mathord}{letters}{"3B} % change dot in math to a comma
+
+% FONT AND ENCODING %
+%-=================-%
+\usepackage{fontawesome5} % use FontAwesome 5 for icons
+\newfontfamily\mathfont{CMU Serif} % will be used for \LaTeX and \KaTeX commands
+\usefonttheme[onlymath]{serif} % use a serif font for math
+
+
+% LISTS %
+%-=====-%
+% remember the old list margins for later use
+\newlength{\originalmarginlength}
+\setlength{\originalmarginlength}{\leftmargini}
+
+% set left list margins to 0
+\setlength\leftmargini{0em}
+\setlength\leftmarginii{0em}
+\setlength\leftmarginiii{0em}
+
+
+% define KaTeX logo
+\makeatletter
+\DeclareRobustCommand{\KaTeX}{%
+  K\kern -.19em
+  {\sbox \z@ T\vbox to\ht \z@ {\hbox{%
+  \check@mathfonts
+  \fontsize\sf@size\z@
+  \selectfont A}%
+  \vss}%
+}\kern -.15em
+\TeX}
+\makeatother
+
+% ---------------------------------------------------------------------------- %
+
 % title page settings
 \title{\makebox[\linewidth]{Robotika jednoduše}}
 \setbeamerfont{title}{size=\huge} % center the title
