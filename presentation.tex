@@ -119,6 +119,83 @@
       \item<+-> centralizovaný zdroj informací
     \end{itemize}
   \end{frame}
+
+  \section{Technické provedení}
+
+  \begin{frame}{Generování stránky}
+    \begin{itemize}
+      \item<+-> \textbf{Jekyll} -- generátor statických webových stránek
+      \item<+-> zdrojový kód ze souborů prostého textu
+    \end{itemize}
+
+    \begin{columns}[T, onlytextwidth]
+      \footnotesize
+      \column<+->{0.5\textwidth}
+        \begin{center}
+          \faIcon{plus}
+        \end{center}
+        \begin{itemize}[<+- | alert@+>]
+          \item vyšší bezpečnost
+          \item jednoduchost verzování
+        \end{itemize}
+      \column<+->{0.5\textwidth}
+        \begin{center}
+          \faIcon{minus}
+        \end{center}
+        \begin{itemize}[<+- | alert@+>]
+          \item žádný dynamický obsah
+          \item obtížnost nastavení
+        \end{itemize}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}{Multiplatformnost}
+    \begin{minipage}[b]{\textwidth}
+      \begin{table}[H]
+        \caption{Funkčnost stránky na různých platformách}
+        \scriptsize
+        \centering
+        \begin{tabular}{@{}rccccccccccccc@{}} \toprule
+          & \multicolumn{6}{c}{Stolní počítač} & \phantom{abc} & \multicolumn{6}{c}{Mobilní zařízení} \\
+            \cmidrule{2-7} \cmidrule{9-14}
+           & \faIcon{firefox} & \faIcon{chrome} & \faIcon{internet-explorer} & \faIcon{edge} & \faIcon{safari} & \faIcon{opera}
+          && \faIcon{firefox} & \faIcon{chrome} & \faIcon{internet-explorer} & \faIcon{edge} & \faIcon{safari} & \faIcon{opera}\\
+            \midrule
+          Obrázky     & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
+          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
+          Rovnice     & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
+          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
+          Vizualizace & \faIcon{check} & \faIcon{check} & \faIcon{times} & \faIcon{check} & \faIcon{check} & \faIcon{check}
+          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
+          Formátování & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
+          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
+            \bottomrule
+        \end{tabular}
+      \end{table}
+    \end{minipage}
+  \end{frame}
+
+  \begin{frame}{Automatizace provozu}
+    \begin{itemize}
+      \item<+-> \textbf{Python} -- skriptovací jazyk
+      \item<+-> rozsáhlá standardní knihovna
+      \item<+-> vysoká míra abstrakce
+    \end{itemize}
+
+    % temporarily set the margin to its original value to indent the enumerate
+    \setlength\leftmargini{\originalmarginlength}
+
+    \begin{enumerate}[<+- | alert@+>]
+      \item upload stránky přes FTP
+      \item generování souboru sitemap.xml
+      \item převod do PDF
+      \item komprimace obrázků
+      \item minimalizace zdrojového kódu
+    \end{enumerate}
+
+    \setlength\leftmargini{0em}
+  \end{frame}
+
   \appendix
 
   {\setbeamertemplate{frame footer}{}
