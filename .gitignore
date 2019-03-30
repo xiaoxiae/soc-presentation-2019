@@ -28,6 +28,7 @@
 *.run.xml
 *.nav
 *.snm
+*.vrb
 
 # ignore binary files
 *.pdf
