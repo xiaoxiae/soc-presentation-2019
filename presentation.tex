@@ -86,7 +86,9 @@
 \setlength\leftmargini{0em}
 
 
-% define KaTeX logo
+% LOGOS, ICONS %
+%-============-%
+% KaTeX logo
 \makeatletter
 \DeclareRobustCommand{\KaTeX}{%
   K\kern -.19em
@@ -98,6 +100,19 @@
 }\kern -.15em
 \TeX}
 \makeatother
+
+% browser icons
+\newcommand{\Firefox}{\faIcon{firefox}}
+\newcommand{\Chrome}{\faIcon{chrome}}
+\newcommand{\IE}{\faIcon{internet-explorer}}
+\newcommand{\Edge}{\faIcon{edge}}
+\newcommand{\Safari}{\faIcon{safari}}
+\newcommand{\Opera}{\faIcon{opera}}
+
+% yes, no and N/A icons
+\newcommand{\Yes}{\faIcon{check}}
+\newcommand{\No}{\faIcon{times}}
+\newcommand{\NA}{\faIcon{minus}}
 
 % ---------------------------------------------------------------------------- %
 
@@ -140,7 +155,7 @@
         \end{itemize}
       \column<+->{0.5\textwidth}
         \begin{center}
-          \faIcon{minus}
+          \NA
         \end{center}
         \begin{itemize}[<+- | alert@+>]
           \item žádný dynamický obsah
@@ -155,21 +170,17 @@
         \caption{Funkčnost stránky na různých platformách}
         \scriptsize
         \centering
-        \begin{tabular}{@{}rccccccccccccc@{}} \toprule
-          & \multicolumn{6}{c}{Stolní počítač} & \phantom{abc} & \multicolumn{6}{c}{Mobilní zařízení} \\
-            \cmidrule{2-7} \cmidrule{9-14}
-           & \faIcon{firefox} & \faIcon{chrome} & \faIcon{internet-explorer} & \faIcon{edge} & \faIcon{safari} & \faIcon{opera}
-          && \faIcon{firefox} & \faIcon{chrome} & \faIcon{internet-explorer} & \faIcon{edge} & \faIcon{safari} & \faIcon{opera}\\
-            \midrule
-          Obrázky     & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
-          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
-          Rovnice     & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
-          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
-          Vizualizace & \faIcon{check} & \faIcon{check} & \faIcon{times} & \faIcon{check} & \faIcon{check} & \faIcon{check}
-          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
-          Formátování & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check} & \faIcon{check}
-          && \faIcon{check} & \faIcon{check} & \faIcon{minus} & \faIcon{check} & \faIcon{check} & \faIcon{check} \\
-            \bottomrule
+        \begin{tabular}{@{}rccccccccccccc@{}}
+          \toprule
+            & \multicolumn{6}{c}{Stolní počítač} & \phantom{abc} & \multicolumn{6}{c}{Mobilní zařízení} \\
+          \cmidrule{2-7} \cmidrule{9-14}
+            & \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera && \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera \\
+          \midrule
+            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
+            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
+            Vizualizace & \Yes & \Yes & \No  & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
+            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
+          \bottomrule
         \end{tabular}
       \end{table}
     \end{minipage}
