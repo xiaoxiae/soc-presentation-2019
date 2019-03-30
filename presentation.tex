@@ -61,6 +61,16 @@
 \usepackage{booktabs} % table formatting
 \usepackage{multirow} % for creating multirow tables
 
+% make each frame title appear in the bookmarks
+% https://tex.stackexchange.com/questions/66519/make-each-frame-not-slide-appear-in-the-pdf-bookmarks-with-beamer
+\usepackage{bookmark}
+\usepackage{etoolbox}
+\makeatletter
+\apptocmd{\beamer@@frametitle}{\only<1>{\bookmark[page=\the\c@page,level=3]{#1}}}%
+{\message{** patching of \string\beamer@@frametitle succeeded **}}%
+{\message{** patching of \string\beamer@@frametitle failed **}}%
+\makeatother
+
 
 % MATH %
 %-====-%
