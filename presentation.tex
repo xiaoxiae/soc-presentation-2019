@@ -196,6 +196,38 @@
     \setlength\leftmargini{0em}
   \end{frame}
 
+  \section{Tvorba obsahu}
+
+  \begin{frame}[fragile]{Renderování rovnic}
+    \begin{itemize}
+      \item<+-> {\mathfont\textbf{\KaTeX}} -- JavaScriptová knihovna
+      \item<+-> renderování rovnic z {\mathfont\LaTeX}ové notace
+    \end{itemize}
+    
+    \onslide<+->
+    \begin{equation}
+      \small
+      \verb|$$\sum_{i=1}^{n}i=\frac{n(n+1)}{2}$$|
+    \end{equation}
+
+    \onslide<+->
+    \begin{equation}
+      \small
+      \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+    \end{equation}
+  \end{frame}
+
+  \begin{frame}[fragile]{Testování kódu}
+    \begin{figure}[H]
+      \centering
+
+      \subcaptionbox{Boční pohled na model robota}{\fbox{\includegraphics[width=.475\linewidth]{robot1.png}}}%
+      \hfill
+      \subcaptionbox{Vrchní pohled na model robota}{\fbox{\includegraphics[width=.475\linewidth]{robot2.png}}}%
+
+      \caption[3D model robota]{3D model robota, vytvořen v CAD programu Fusion 360.}%
+    \end{figure}
+  \end{frame}
 
   \section{Návštěvnost}
 
