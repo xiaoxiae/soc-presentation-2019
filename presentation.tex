@@ -19,6 +19,17 @@
 \renewcommand{\dateseparator}{. }
 
 
+% LANGUAGE %
+%-========-%
+\usepackage[czech]{babel} % czech language localization
+
+% since appendix is only the last slide, change its name
+\addto{\captionsczech}{\renewcommand*{\appendixname}{Děkuji za pozornost}}
+
+% https://tex.stackexchange.com/questions/111999/slovak-and-czech-babel-gives-problems-with-cmidrule-and-cline
+\AtBeginDocument{\shorthandoff{-}}
+
+
 % GRAPHICS %
 %-========-%
 \usepackage{graphicx}     % graphics package
