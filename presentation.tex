@@ -145,6 +145,8 @@
 \newcommand{\People}{\fixfaIcon{UserFriends}}
 \newcommand{\Globe}{\fixfaIcon{GlobeAmericas}}
 \newcommand{\Browser}{\fixfaIcon{Chrome}}
+\newcommand{\Plus}{\fixfaIcon{Plus}}
+\newcommand{\Minus}{\fixfaIcon{Minus}}
 
 % ---------------------------------------------------------------------------- %
 
@@ -175,11 +177,13 @@
       \item<+-> zdrojový kód ze souborů prostého textu
     \end{itemize}
 
-    \begin{columns}[T, onlytextwidth]
+    \begin{columns}[b, onlytextwidth]
+      \setlength\topsep{0.5\topsep}
       \footnotesize
       \column<+->{0.5\textwidth}
         \begin{center}
-          \faIcon{plus}
+          \large
+          \Plus
         \end{center}
         \begin{itemize}[<+- | alert@+>]
           \item vyšší bezpečnost
@@ -187,7 +191,8 @@
         \end{itemize}
       \column<+->{0.5\textwidth}
         \begin{center}
-          \NA
+          \large
+          \Minus
         \end{center}
         \begin{itemize}[<+- | alert@+>]
           \item žádný dynamický obsah
