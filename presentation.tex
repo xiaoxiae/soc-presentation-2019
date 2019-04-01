@@ -135,6 +135,14 @@
 \newcommand{\No}{\faIcon{times}}
 \newcommand{\NA}{\faIcon{minus}}
 
+% for making only certain icons monospaced
+\NewDocumentCommand\fixfaIcon{ m s}{\makebox[1.5em][c]{\IfBooleanTF{#2}{\csname fa#1\endcsname*}{\csname fa#1\endcsname}}}
+
+% for inserting appropriate icons to specific slide names
+\newcommand{\Mobile}{\fixfaIcon{Mobile}*}
+\newcommand{\Desktop}{\fixfaIcon{Desktop}}
+\newcommand{\Book}{\fixfaIcon{Book}}
+
 % ---------------------------------------------------------------------------- %
 
 % title page settings
@@ -290,14 +298,14 @@
 
   \section{Režimy prohlížení}
 
-  \begin{frame}{Plný vzhled}
+  \begin{frame}{\texorpdfstring{Plný vzhled\hfill\Desktop}{Plný vzhled}}
     \begin{figure}[H]
       \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{full-version.png}}
       \caption{Plný vzhled webové stránky}
     \end{figure}
   \end{frame}
 
-  \begin{frame}{Kompaktní vzhled}
+  \begin{frame}{\texorpdfstring{Kompaktní vzhled\hfill\Mobile}{Kompaktní vzhled}}
     \begin{figure}[H]
       \centering
 
@@ -309,7 +317,7 @@
     \end{figure}
   \end{frame}
 
-  \begin{frame}{PDF verze}
+  \begin{frame}{\texorpdfstring{PDF verze\hfill\Book}{PDF verze}}
     \begin{figure}[H]
       \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{pdf-version.png}}
       \caption{PDF verze webové stránky}
