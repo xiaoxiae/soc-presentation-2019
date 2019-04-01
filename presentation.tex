@@ -22,13 +22,14 @@
 % since appendix is only the last slide, change its name
 \addto{\captionsczech}{\renewcommand*{\appendixname}{Děkuji za pozornost}}
 
+% fixes the Czech/Slovak babel and booktabs packages clash
 % https://tex.stackexchange.com/questions/111999/slovak-and-czech-babel-gives-problems-with-cmidrule-and-cline
 \AtBeginDocument{\shorthandoff{-}}
 
 
 % GRAPHICS %
 %-========-%
-\usepackage{graphicx}     % graphics package
+\usepackage{graphicx}        % graphics package
 \graphicspath{ {./images/} } % path to images
 
 \usepackage{float} % floats in correct position (the [H] option)
@@ -159,9 +160,9 @@
 
   \begin{frame}{Motivace}
     \begin{itemize}
-      \item<+-> praktické uplanění robotiky v dnešním světě
+      \item<+-> vysoké uplatnění robotiky v dnešním světě
       \item<+-> nedostatek přístupných materiálů
-      \item<+-> centralizovaný zdroj informací
+      \item<+-> poskytnutí centralizovaného zdroje informací
     \end{itemize}
   \end{frame}
 
@@ -170,7 +171,7 @@
   \begin{frame}{Generování stránky}
     \begin{itemize}
       \item<+-> \textbf{Jekyll} -- generátor statických webových stránek
-      \item<+-> zdrojový kód ze souborů prostého textu
+      \item<+-> zdrojový kód z prostého textu
     \end{itemize}
 
     \vspace{\baselineskip}
@@ -212,7 +213,7 @@
     \end{itemize}
 
     \begin{itemize}
-      \item<+-> usnadnění provozu automatizováním:
+      \item<+-> usnadnění provozu automatizováním
       \begin{enumerate}[<+- | alert@+>]
         \item uploadu stránky přes FTP
         \item generování souboru sitemap.xml
@@ -293,7 +294,7 @@
     \end{figure}
   \end{frame}
 
-  \begin{frame}[fragile]{Testování kódu}
+  \begin{frame}[fragile]{Ověření správnosti kódu}
       \begin{itemize}
       \item \textbf{VEX EDR} -- robotická stavebnice
       \begin{itemize}
@@ -308,7 +309,7 @@
       \hfill
       \subcaptionbox{Vrchní pohled na model robota}{\fbox{\includegraphics[width=.475\linewidth]{robot2.png}}}%
 
-      \caption[3D model robota]{3D model robota, vytvořen v CAD programu Fusion 360.}%
+      \caption{3D model robota, vytvořen v CAD programu Fusion 360}%
     \end{figure}
   \end{frame}
 
