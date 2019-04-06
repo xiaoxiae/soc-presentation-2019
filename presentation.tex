@@ -168,7 +168,7 @@
   \begin{frame}{Generování stránky}
     \pause
     \begin{itemize}[<+->]
-      \item \textbf{Jekyll} -- generátor statických webových stránek
+      \item \textbf{Jekyll} -- generátor statických webů
       \item zdrojový kód z prostého textu
     \end{itemize}
 
@@ -213,13 +213,13 @@
 
     \begin{itemize}
       \item<+-> usnadnění provozu automatizováním
-      \begin{enumerate}[<+->]
+      \begin{itemize}[<+->]
         \item generování souboru sitemap.xml
         \item převodu do PDF
         \item komprimace obrázků
         \item minimalizace zdrojového kódu
         \item uploadu stránky přes FTP
-      \end{enumerate}
+      \end{itemize}
     \end{itemize}
   \end{frame}
 
@@ -238,10 +238,10 @@
           \cmidrule{2-7} \cmidrule{9-14}
             & \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera && \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera \\
           \midrule
-            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
-            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
-            Vizualizace & \Yes & \Yes & \No  & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
-            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \NA & \Yes & \Yes & \Yes \\
+            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
+            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
+            Vizualizace & \Yes & \Yes & \alert<3>{\No}  & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
+            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
           \bottomrule
         \end{tabular}
       \end{table}
@@ -396,7 +396,7 @@
             symbolic x coords={18--24, 25--34, 35--44, 45--54},
             xtick=data,
             ylabel={Procento návštěvníků},
-            xlabel={Věková kategorie},
+              xlabel={Věková kategorie (let)},
             bar width=0.5cm,
             width=\textwidth,
             enlarge x limits=0.18,
@@ -426,22 +426,22 @@
           \scriptsize
           \centering
           \begin{tabular}{lr}
-            \toprule
-              \emph{Země} & \emph{Návštěvníci} \\
-            \midrule
-              Spojené státy      & \num{240} \\
-              Česká republika	   & \num{35} \\
-              Spojené království & \num{20} \\
-              Kanada             & \num{17} \\
-              Německo            & \num{10} \\
-              Japonsko           & \num{10} \\
-              Čína               & \num{8} \\
-              Indie              & \num{8} \\
-              Španělsko          & \num{7} \\
-              Nizozemí           & \num{7} \\
-            \bottomrule
-          \end{tabular}
-        \end{table}
+              \toprule
+                \emph{Země} & \emph{Návštěvníci} \\
+              \midrule
+                \alert<3>{Spojené státy} & \alert<3>{\num{240}} \\
+                Česká republika & \num{35} \\
+                \alert<3>{Spojené království} & \alert<3>{\num{20}} \\
+                \alert<3>{Kanada} & \alert<3>{\num{17}} \\
+                Německo & \num{10} \\
+                Japonsko & \num{10} \\
+                Čína & \num{8} \\
+                Indie & \num{8} \\
+                Španělsko & \num{7} \\
+                Nizozemí & \num{7} \\
+              \bottomrule
+            \end{tabular}
+          \end{table}
       \end{minipage}\hfill
       \begin{minipage}[b]{0.5\textwidth}
         \begin{table}[H]
@@ -449,25 +449,25 @@
           \scriptsize
           \centering
           \begin{tabular}{lr}
-            \toprule
-              \emph{Prohlížeč} & \emph{Návštěvníci} \\
-            \midrule
-              Chrome            & \num{226} \\
-              Firefox	          & \num{111} \\
-              Safari            & \num{85} \\
-              Android Webview   & \num{14} \\
-              Internet Explorer & \num{6} \\
-              Opera             & \num{6} \\
-              Edge              & \num{5} \\
-              Samsung Internet  & \num{5} \\
-              Neurčeno          & \num{4} \\
-              Cốc Cốc           & \num{1} \\
-            \bottomrule
-          \end{tabular}
-        \end{table}
-      \end{minipage}
-    \end{figure}
-  \end{frame}
+              \toprule
+                \emph{Prohlížeč} & \emph{Návštěvníci} \\
+              \midrule
+                \alert<4>{Chrome} & \alert<4>{\num{226}} \\
+                \alert<5>{Firefox} & \alert<5>{\num{111}} \\
+                Safari & \num{85} \\
+                Android Webview & \num{14} \\
+                Internet Explorer & \num{6} \\
+                Opera & \num{6} \\
+                Edge & \num{5} \\
+                Samsung Internet & \num{5} \\
+                Neurčeno & \num{4} \\
+                Cốc Cốc & \num{1} \\
+              \bottomrule
+            \end{tabular}
+          \end{table}
+        \end{minipage}
+      \end{figure}
+    \end{frame}
 
   \appendix
 
