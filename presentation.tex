@@ -117,6 +117,11 @@
 \TeX}
 \makeatother
 
+
+% OTHER %
+%-=====-%
+\usepackage{multido}
+
 % browser icons
 \newcommand{\Firefox}{\faIcon{firefox}}
 \newcommand{\Chrome}{\faIcon{chrome}}
@@ -378,44 +383,50 @@
 
   \begin{frame}{Pohlaví a věk}
       \pause
-    \begin{figure}
+      \begin{figure}
         \begin{minipage}[b]{0.5\textwidth}
-        \scriptsize
-        \centering
-          \begin{tikzpicture}[scale=0.64]
-            \pie[color={azure, red}, rotate=-35, before number=\ScanPercentage, after  number ={ }\%,]{91.2/Muži, 8.8/Ženy}
-        \end{tikzpicture}
-        \captionof{figure}{Pohlaví návštěvníků}
-        \label{img:Pohlaví návštěvníků}
-      \end{minipage}\hfill
+          \multido{\n=2+1}{3}{
+            \only<\ifnum\n<3 {-2}\else \ifnum\n=3 {3} \else {4-} \fi \fi>{
+              \scriptsize
+              \centering
+              \begin{tikzpicture}[scale=0.64]
+                \pie[color={\ifnum\n=3 mLightBrown\else azure\fi, red}, rotate=-35, before number=\ScanPercentage, after  number ={ }\%,]{91.2/Muži, 8.8/Ženy}
+              \end{tikzpicture}
+              \captionof{figure}{Pohlaví návštěvníků}
+              \label{img:Pohlaví návštěvníků}
+            }
+          }
+        \end{minipage}\hfill
         \begin{minipage}[b]{0.5\textwidth}
-        \scriptsize
-        \centering
-        \begin{tikzpicture}
-          \begin{axis}[
-            symbolic x coords={18--24, 25--34, 35--44, 45--54},
-            xtick=data,
-            ylabel={Procento návštěvníků},
-              xlabel={Věková kategorie (let)},
-            bar width=0.5cm,
+          \multido{\n=3+1}{2}{
+            \only<\ifnum\n<4 {-3}\else {4-}\fi>{
+              \scriptsize
+              \centering
+              \begin{tikzpicture}
+                \begin{axis}[
+                  symbolic x coords={18--24,,25--34,,35--44,,45--54},
+                  xtick={18--24,25--34,35--44,45--54},
+                  ylabel={Procento návštěvníků},
+                  xlabel={Věková kategorie (let)},
+                  bar width=0.5cm,
             width=\textwidth,
-            enlarge x limits=0.18,
-            ymin=0, ymax=60,
-            nodes near coords={\pgfmathprintnumber\pgfplotspointmeta{ }\%},
-            yticklabel={\pgfmathparse{\tick}\pgfmathprintnumber{\pgfmathresult}{ }\%},]
-              \addplot[ybar,fill=azure] coordinates {
-              (18--24, 18.9)
-              (25--34, 48.4)
-              (35--44, 18.0)
-              (45--54, 14.7)
-            };
-          \end{axis}
-        \end{tikzpicture}
-        \captionof{figure}{Věk návštěvníků}
-        \label{img:Věk návštěvníků}
-      \end{minipage}
-    \end{figure}
-  \end{frame}
+                  enlarge x limits=0.18,
+                  ymin=0, ymax=60,
+                  nodes near coords={\pgfmathprintnumber\pgfplotspointmeta{ }\%},
+                  yticklabel={\pgfmathparse{\tick}\pgfmathprintnumber{\pgfmathresult}{ }\%}]
+                  \addplot[ybar,fill=azure] coordinates {(18--24, 18.9)};
+                  \addplot[ybar,fill={\ifnum\n=4 mLightBrown\else azure\fi}] coordinates {(25--34, 48.4)};
+                  \addplot[ybar,fill=azure] coordinates {(35--44, 18.0)};
+                  \addplot[ybar,fill=azure] coordinates {(45--54, 14.7)};
+                \end{axis}
+              \end{tikzpicture}
+              \captionof{figure}{Věk návštěvníků}
+              \label{img:Věk návštěvníků}
+            }
+          }
+        \end{minipage}
+      \end{figure}
+    \end{frame}
 
   \begin{frame}{Prohlížeč a lokace}
       \pause
