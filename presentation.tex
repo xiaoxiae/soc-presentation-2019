@@ -120,6 +120,7 @@
 
 % OTHER %
 %-=====-%
+% loops
 \usepackage{multido}
 
 % browser icons
@@ -168,57 +169,52 @@
     \end{itemize}
   \end{frame}
 
-  \section{Technické provedení}
+  \section{Režimy prohlížení}
 
-  \begin{frame}{Generování stránky}
+  \begin{frame}{\texorpdfstring{Plný vzhled\hfill\Desktop}{Plný vzhled}}
+    \pause
+    \begin{figure}[H]
+      \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{full-version.png}}
+      \caption{Plný vzhled webové stránky}
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}{\texorpdfstring{Kompaktní vzhled\hfill\Mobile}{Kompaktní vzhled}}
+    \pause
+    \begin{figure}[H]
+      \centering
+
+      \subcaptionbox{Stránka bez menu}{\fbox{\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{compact-version-1.png}}}%
+      \qquad
+      \subcaptionbox{Stránka s menu}{\fbox{\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{compact-version-2.png}}}%
+
+      \caption{Kompaktní vzhled webové stránky}%
+    \end{figure}
+  \end{frame}
+
+  \begin{frame}{\texorpdfstring{PDF verze\hfill\Book}{PDF verze}}
+    \pause
+    \begin{figure}[H]
+      \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{pdf-version.png}}
+      \caption{PDF verze webové stránky}
+    \end{figure}
+  \end{frame}
+
+  \section{Provoz stránky}
+
+  \begin{frame}{Generování zdrojového kódu}
     \pause
     \begin{itemize}[<+->]
       \item \textbf{Jekyll} -- generátor statických webů
-      \item zdrojový kód z prostého textu
-    \end{itemize}
-
-    \vspace{\baselineskip}
-
-    \begin{columns}[b, onlytextwidth]
-      \setlength\topsep{0pt}
-      \small
-      \column<+->{0.5\textwidth}
-        \begin{center}
-          \large
-          \Plus
-        \end{center}
-        \begin{itemize}[<+->]
-          \itemsep0em
-          \item vyšší bezpečnost
-          \item jednoduché verzování
-        \end{itemize}
-      \column<+->{0.5\textwidth}
-        \begin{center}
-          \large
-          \Minus
-        \end{center}
-        \begin{itemize}[<+->]
-          \itemsep0em
-          \item žádný dynamický obsah
-          \item obtížnost nastavení
-        \end{itemize}
-    \end{columns}
-  \end{frame}
-
-  \begin{frame}{Automatizace provozu}
-    \pause
-    \begin{itemize}[<+->]
-      \item \textbf{Python} -- skriptovací jazyk
-      \begin{itemize}
-        \item jednoduchá syntaxe
-        \item rozsáhlá standardní knihovna
-        \item vysoká míra abstrakce
+      \begin{itemize}[<+->]
+        \item zdrojový kód z prostého textu
+        \item verzování + bezpečnost
       \end{itemize}
     \end{itemize}
 
-    \begin{itemize}
-      \item<+-> usnadnění provozu automatizováním
-      \begin{itemize}[<+->]
+    \begin{itemize}[<+->]
+      \item \textbf{Python} -- skriptovací jazyk
+      \begin{itemize}
         \item generování souboru sitemap.xml
         \item převodu do PDF
         \item komprimace obrázků
@@ -243,10 +239,10 @@
           \cmidrule{2-7} \cmidrule{9-14}
             & \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera && \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera \\
           \midrule
-            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
-            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
-            Vizualizace & \Yes & \Yes & \alert<3>{\No}  & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
-            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<4>{\NA} & \Yes & \Yes & \Yes \\
+            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Vizualizace & \Yes & \Yes & \alert<3>{\No}  & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
           \bottomrule
         \end{tabular}
       \end{table}
@@ -332,59 +328,26 @@
     \end{figure}
   \end{frame}
 
-  \section{Režimy prohlížení}
-
-  \begin{frame}{\texorpdfstring{Plný vzhled\hfill\Desktop}{Plný vzhled}}
-    \pause
-    \begin{figure}[H]
-      \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{full-version.png}}
-      \caption{Plný vzhled webové stránky}
-    \end{figure}
-  \end{frame}
-
-  \begin{frame}{\texorpdfstring{Kompaktní vzhled\hfill\Mobile}{Kompaktní vzhled}}
-    \pause
-    \begin{figure}[H]
-      \centering
-
-      \subcaptionbox{Stránka bez menu}{\fbox{\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{compact-version-1.png}}}%
-      \qquad
-      \subcaptionbox{Stránka s menu}{\fbox{\includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{compact-version-2.png}}}%
-
-      \caption{Kompaktní vzhled webové stránky}%
-    \end{figure}
-  \end{frame}
-
-  \begin{frame}{\texorpdfstring{PDF verze\hfill\Book}{PDF verze}}
-    \pause
-    \begin{figure}[H]
-      \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{pdf-version.png}}
-      \caption{PDF verze webové stránky}
-    \end{figure}
-  \end{frame}
-
-  \section{Návštěvnost}
+  \section{Návštěvnost a uplatnění}
 
     \begin{frame}{Sbírání dat}
       \pause
       \begin{itemize}[<+->]
-        \item \textbf{Google Analytics} -- data návštěvníků a jejich interakce se stránkou
+        \item \textbf{Google Analytics} -- interakce se stránkou
         \begin{itemize}
-          \item věk, pohlaví, lokace
-          \item zařízení, prohlížeč
-          \item délka návštěvy
+          \item věk / pohlaví / lokace; zařízení / prohlížeč
         \end{itemize}
       \end{itemize}
 
       \begin{itemize}[<+->]
         \item \textbf{Google Search Console} -- Google vyhledávání
         \begin{itemize}
-          \item statistiky o pozici na Googlu
+          \item statistiky o pozici v rámci Google vyhledávání
         \end{itemize}
       \end{itemize}
     \end{frame}
 
-  \begin{frame}{Pohlaví a věk}
+    \begin{frame}{Pohlaví a věk}
       \pause
       \begin{figure}
         \begin{minipage}[b]{0.5\textwidth}
@@ -412,7 +375,7 @@
                   ylabel={Procento návštěvníků},
                   xlabel={Věková kategorie (let)},
                   bar width=0.5cm,
-            width=\textwidth,
+                  width=\textwidth,
                   enlarge x limits=0.18,
                   ymin=0, ymax=60,
                   nodes near coords={\pgfmathprintnumber\pgfplotspointmeta{ }\%},
@@ -431,15 +394,15 @@
       \end{figure}
     \end{frame}
 
-  \begin{frame}{Prohlížeč a lokace}
+    \begin{frame}{Prohlížeč a lokace}
       \pause
-    \begin{figure}
-      \begin{minipage}[b]{0.5\textwidth}
-        \begin{table}[H]
-          \caption{Lokace návštěvníků}
-          \scriptsize
-          \centering
-          \begin{tabular}{lr}
+      \begin{figure}
+        \begin{minipage}[b]{0.5\textwidth}
+          \begin{table}[H]
+            \caption{Lokace návštěvníků}
+            \scriptsize
+            \centering
+            \begin{tabular}{lr}
               \toprule
                 \emph{Země} & \emph{Návštěvníci} \\
               \midrule
@@ -456,18 +419,18 @@
               \bottomrule
             \end{tabular}
           \end{table}
-      \end{minipage}\hfill
-      \begin{minipage}[b]{0.5\textwidth}
-        \begin{table}[H]
-          \caption{Prohlížeč návštěvníků}
-          \scriptsize
-          \centering
-          \begin{tabular}{lr}
+        \end{minipage}\hfill
+        \begin{minipage}[b]{0.5\textwidth}
+          \begin{table}[H]
+            \caption{Prohlížeč návštěvníků}
+            \scriptsize
+            \centering
+            \begin{tabular}{lr}
               \toprule
                 \emph{Prohlížeč} & \emph{Návštěvníci} \\
               \midrule
                 \alert<4>{Chrome} & \alert<4>{\num{226}} \\
-                \alert<5>{Firefox} & \alert<5>{\num{111}} \\
+                Firefox & \num{111} \\
                 Safari & \num{85} \\
                 Android Webview & \num{14} \\
                 Internet Explorer & \num{6} \\
@@ -481,6 +444,15 @@
           \end{table}
         \end{minipage}
       \end{figure}
+    \end{frame}
+
+    \begin{frame}{Uplatnění}
+      \pause
+      \begin{itemize}[<+->]
+        \item zpřístupnění robotiky pro začátečníky
+        \item strukturované materiály pro lektory robotiky
+        \item šablona pro Jekyllem poháněné projekty
+      \end{itemize}
     \end{frame}
 
   \appendix
