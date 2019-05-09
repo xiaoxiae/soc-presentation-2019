@@ -47,6 +47,7 @@
 % define custom colors for the graph
 \definecolor{azure}{RGB}{0,102,255}
 \definecolor{red}{RGB}{255,0,0}
+\definecolor{green}{RGB}{153,204,255}
 
 % change pie chart number separator from dot to comma
 \usepackage{siunitx}
@@ -172,7 +173,6 @@
   \section{Režimy prohlížení}
 
   \begin{frame}{\texorpdfstring{Plný vzhled\hfill\Desktop}{Plný vzhled}}
-    \pause
     \begin{figure}[H]
       \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{full-version.png}}
       \caption{Plný vzhled webové stránky}
@@ -180,7 +180,6 @@
   \end{frame}
 
   \begin{frame}{\texorpdfstring{Kompaktní vzhled\hfill\Mobile}{Kompaktní vzhled}}
-    \pause
     \begin{figure}[H]
       \centering
 
@@ -193,7 +192,6 @@
   \end{frame}
 
   \begin{frame}{\texorpdfstring{PDF verze\hfill\Book}{PDF verze}}
-    \pause
     \begin{figure}[H]
       \fbox{\includegraphics[width=\textwidth,height=0.7\textheight,keepaspectratio]{pdf-version.png}}
       \caption{PDF verze webové stránky}
@@ -216,54 +214,13 @@
       \item \textbf{Python} -- skriptovací jazyk
       \begin{itemize}
         \item generování souboru sitemap.xml
-        \item převodu do PDF
-        \item komprimace obrázků
+        \item převod do PDF pomocí regexů
+        \item komprimace obrázků kvantováním barev
         \item minimalizace zdrojového kódu
-        \item uploadu stránky přes FTP
+        \item upload stránky přes FTP na webhosting
       \end{itemize}
     \end{itemize}
   \end{frame}
-
-  \section{Testování výkonu}
-
-  \begin{frame}{Multiplatformnost}
-    \pause
-    \begin{minipage}[b]{\textwidth}
-      \begin{table}[H]
-        \caption{Funkčnost stránky na různých platformách}
-        \scriptsize
-        \centering
-        \begin{tabular}{@{}rccccccccccccc@{}}
-          \toprule
-            & \multicolumn{6}{c}{Stolní počítač} & \phantom{abc} & \multicolumn{6}{c}{Mobilní zařízení} \\
-          \cmidrule{2-7} \cmidrule{9-14}
-            & \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera && \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera \\
-          \midrule
-            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
-            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
-            Vizualizace & \Yes & \Yes & \alert<3>{\No}  & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
-            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
-          \bottomrule
-        \end{tabular}
-      \end{table}
-    \end{minipage}
-  \end{frame}
-
-  \begin{frame}{Doba načtení}
-    \pause
-    \begin{itemize}
-      \item \textbf{WebPageTest} -- rychlost načtení stránky
-    \end{itemize}
-
-    \pause
-
-    \begin{figure}[H]
-      \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{map.png}
-      \caption{Mapa dob načtení stránky (od \alert<4>{\SI{1.356}{\second}} do \alert<5>{\SI{4.215}{\second}})}
-    \end{figure}
-  \end{frame}
-
-  \section{Tvorba obsahu}
 
   \begin{frame}[fragile]{Renderování rovnic}
     \pause
@@ -328,6 +285,45 @@
     \end{figure}
   \end{frame}
 
+  \section{Testování výkonu}
+
+  \begin{frame}{Multiplatformnost}
+    \pause
+    \begin{minipage}[b]{\textwidth}
+      \begin{table}[H]
+        \caption{Funkčnost stránky na různých platformách}
+        \scriptsize
+        \centering
+        \begin{tabular}{@{}rccccccccccccc@{}}
+          \toprule
+            & \multicolumn{6}{c}{Stolní počítač} & \phantom{abc} & \multicolumn{6}{c}{Mobilní zařízení} \\
+          \cmidrule{2-7} \cmidrule{9-14}
+            & \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera && \Firefox & \Chrome & \IE & \Edge & \Safari & \Opera \\
+          \midrule
+            Obrázky     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Rovnice     & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Vizualizace & \Yes & \Yes & \alert<3>{\No}  & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+            Formátování & \Yes & \Yes & \Yes & \Yes & \Yes & \Yes && \Yes & \Yes & \alert<3>{\NA} & \Yes & \Yes & \Yes \\
+          \bottomrule
+        \end{tabular}
+      \end{table}
+    \end{minipage}
+  \end{frame}
+
+  \begin{frame}{Doba načtení}
+    \pause
+    \begin{itemize}
+      \item \textbf{WebPageTest} -- rychlost načtení stránky
+    \end{itemize}
+
+    \pause
+
+    \begin{figure}[H]
+      \includegraphics[width=\textwidth,height=0.6\textheight,keepaspectratio]{map.png}
+      \caption{Mapa dob načtení stránky (od \alert<4>{\SI{1.356}{\second}} do \alert<5>{\SI{4.215}{\second}})}
+    \end{figure}
+  \end{frame}
+
   \section{Návštěvnost a uplatnění}
 
     \begin{frame}{Sbírání dat}
@@ -335,12 +331,12 @@
       \begin{itemize}[<+->]
         \item \textbf{Google Analytics} -- interakce se stránkou
         \begin{itemize}
-          \item věk / pohlaví / lokace; zařízení / prohlížeč
+          \item věk/pohlaví/lokace; zařízení/prohlížeč
         \end{itemize}
       \end{itemize}
 
       \begin{itemize}[<+->]
-        \item \textbf{Google Search Console} -- Google vyhledávání
+        \item \textbf{Google Search Console}
         \begin{itemize}
           \item statistiky o pozici v rámci Google vyhledávání
         \end{itemize}
@@ -356,7 +352,7 @@
               \scriptsize
               \centering
               \begin{tikzpicture}[scale=0.64]
-                \pie[color={\ifnum\n=3 mLightBrown\else azure\fi, red}, rotate=-35, before number=\ScanPercentage, after  number ={ }\%,]{91.2/Muži, 8.8/Ženy}
+                \pie[color={\ifnum\n=3 mLightBrown\else azure\fi, green}, rotate=-35, before number=\ScanPercentage, after  number ={ }\%,]{91.2/Muži, 8.8/Ženy}
               \end{tikzpicture}
               \captionof{figure}{Pohlaví návštěvníků}
               \label{img:Pohlaví návštěvníků}
@@ -406,16 +402,16 @@
               \toprule
                 \emph{Země} & \emph{Návštěvníci} \\
               \midrule
-                \alert<3>{Spojené státy} & \alert<3>{\num{240}} \\
-                Česká republika & \num{35} \\
+                \alert<3>{Spojené státy} & \alert<3>{\num{278}} \\
+                Česká republika & \num{47} \\
                 \alert<3>{Spojené království} & \alert<3>{\num{20}} \\
                 \alert<3>{Kanada} & \alert<3>{\num{17}} \\
-                Německo & \num{10} \\
-                Japonsko & \num{10} \\
-                Čína & \num{8} \\
-                Indie & \num{8} \\
-                Španělsko & \num{7} \\
-                Nizozemí & \num{7} \\
+                Čína & \num{13} \\
+                Japonsko & \num{13} \\
+                Německo & \num{12} \\
+                Indie & \num{12} \\
+                \alert<3>{Austrálie} & \alert<3>{\num{8}} \\
+                Španělsko & \num{8} \\
               \bottomrule
             \end{tabular}
           \end{table}
@@ -429,13 +425,13 @@
               \toprule
                 \emph{Prohlížeč} & \emph{Návštěvníci} \\
               \midrule
-                \alert<4>{Chrome} & \alert<4>{\num{226}} \\
-                Firefox & \num{111} \\
-                Safari & \num{85} \\
+                \alert<4>{Chrome} & \alert<4>{\num{276}} \\
+                Firefox & \num{116} \\
+                Safari & \num{107} \\
                 Android Webview & \num{14} \\
-                Internet Explorer & \num{6} \\
-                Opera & \num{6} \\
-                Edge & \num{5} \\
+                Edge & \num{8} \\
+                Internet Explorer & \num{7} \\
+                Opera & \num{7} \\
                 Samsung Internet & \num{5} \\
                 Neurčeno & \num{4} \\
                 Cốc Cốc & \num{1} \\
@@ -451,6 +447,9 @@
       \begin{itemize}[<+->]
         \item zpřístupnění robotiky pro začátečníky
         \item strukturované materiály pro lektory robotiky
+        \begin{itemize}
+          \item kurzy pro začátečníky (středoškoláci)
+        \end{itemize}
         \item šablona pro Jekyllem poháněné projekty
       \end{itemize}
     \end{frame}
