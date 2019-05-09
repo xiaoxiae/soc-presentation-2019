@@ -14,5 +14,5 @@ for file in [f for f in os.listdir(".") if os.path.isfile(f)]:
             os.remove(file)
 
 # run xelatex twice to correctly typeset cross-reference-related text
-for _x in range(2):
+for _x in range(3):
     os.system("lualatex --shell-escape " + file_name + ".tex")
